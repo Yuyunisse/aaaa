@@ -19,9 +19,9 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: '*'
-            allowedMethods: "*"
-            allowedHeaders: "*"
+            allowed-origins: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
       routes:
         - id: historial-service
           uri: lb://historial-service:8090
