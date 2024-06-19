@@ -24,7 +24,7 @@ spring:
             allowed-headers: "*"
       routes:
         - id: historial-service
-          uri: lb://historial-service:8090
+          uri: lb://historial-service
           predicates:
             - Path=/historial/**
 
