@@ -1,5 +1,6 @@
 server:
   port: 8081
+
 eureka:
   instance:
     hostname: localhost
@@ -7,7 +8,8 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka
+
 spring:
   cloud:
     gateway:
@@ -27,19 +29,19 @@ spring:
           uri: lb://historial-service
           predicates:
             - Path=/historial/**
-
+            
         - id: vehiculo-service
-          uri: lb://vehiculo-service:8091
+          uri: lb://vehiculo-service
           predicates:
             - Path=/vehiculo/**
-
+            
         - id: reparaciones-service
-          uri: lb://reparaciones-service:8092
+          uri: lb://reparaciones-service
           predicates:
             - Path=/reparaciones/**
-
+            
         - id: reportes-service
-          uri: lb://reportes-service:8093
+          uri: lb://reportes-service
           predicates:
             - Path=/reportes/**
 
