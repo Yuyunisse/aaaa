@@ -16,6 +16,18 @@ spring:
       discovery:
         locator:
           enabled: true
+
+         default-filters:
+          - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+
+    
       routes:
         - id: historial-service
           uri: lb://historial-service
@@ -35,11 +47,4 @@ spring:
             - Path=/vehiculo/**
 
 
-        default-filters:
-          - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: '*'
-            allowedMethods: "*"
-            allowedHeaders: "*"
+       
